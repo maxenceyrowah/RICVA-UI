@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+
+  &__image {
+    flex: 2;
+    background-image: url('../../../assets/img/login_bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 6rem;
+
+    &__form {
+
+      &__title-color {
+        color: #cb7b4b;
+      }
+    }
+  }
+}
