@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ricva-ui-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
