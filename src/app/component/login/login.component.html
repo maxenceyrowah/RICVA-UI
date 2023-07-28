@@ -9,18 +9,18 @@
     <div class="wrapper-form-content">
       <h2 class="form-title">{{ formTitle }}</h2>
 
-      <form class="form-wrapper">
+      <form [formGroup]="LoginForm" (ngSubmit)="signIn()" class="form-wrapper" >
         <div>
           <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Email ou Telephone</mat-label>
-            <input matInput placeholder="contact@gmail.com">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="contact@gmail.com" formControlName="email" required>
           </mat-form-field>
         </div>
 
         <div class="form-field">
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Mot de passe</mat-label>
-            <input matInput [type]="hidePassword ? 'password' : 'text'">
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required>
             <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
               <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
@@ -28,13 +28,13 @@
         </div>
 
         <div>
-          <button mat-button class="form-submit" type="submit">{{ formTitle }}</button>
+          <button mat-button class="form-submit" type="submit" [disabled]="!LoginForm.valid">{{ formTitle }}</button>
         </div>
       </form>
 
       <div>
         <span>Vous n'avez pas de compte ?
-          <a href="/register" class="register-link">S'inscrire</a>
+          <a routerLink="/register" class="register-link">S'inscrire</a>
         </span>
       </div>
     </div>
