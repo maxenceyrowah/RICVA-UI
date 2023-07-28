@@ -1,1 +1,42 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="wrapper-bg-image"></div>
+
+  <div class="wrapper-content">
+    <div class="header-form-logo">
+      <img src="{{ registerFormLogo }}" alt="logo of form" height="245px" />
+    </div>
+
+    <div class="wrapper-form-content">
+      <h2 class="form-title">{{ formTitle }}</h2>
+
+      <form class="form-wrapper">
+        <div>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Email ou Telephone</mat-label>
+            <input matInput placeholder="contact@gmail.com">
+          </mat-form-field>
+        </div>
+
+        <div class="form-field">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Mot de passe</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button class="form-submit" type="submit">{{ formTitle }}</button>
+        </div>
+      </form>
+
+      <div>
+        <span>Vous avez deja un compte ?
+          <a href="/login" class="login-link">Se connecter</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

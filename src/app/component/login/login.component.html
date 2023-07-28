@@ -1,11 +1,42 @@
 <div class="wrapper">
-  <div class="wrapper__image"></div>
-  <div class="wrapper__content">
-    <div class="wrapper__content__logo">
-      <img src="../../../assets/img/logo.png" alt="logo of form" height="245px" />
+  <div class="wrapper-bg-image"></div>
+
+  <div class="wrapper-content">
+    <div class="header-form-logo">
+      <img src="{{ loginFormLogo }}" alt="logo of form" height="245px" />
     </div>
-    <div class="wrapper__content__form">
-      <h2 class="wrapper__content__form__title-color">Connexion</h2>
+
+    <div class="wrapper-form-content">
+      <h2 class="form-title">{{ formTitle }}</h2>
+
+      <form class="form-wrapper">
+        <div>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Email ou Telephone</mat-label>
+            <input matInput placeholder="contact@gmail.com">
+          </mat-form-field>
+        </div>
+
+        <div class="form-field">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Mot de passe</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button class="form-submit" type="submit">{{ formTitle }}</button>
+        </div>
+      </form>
+
+      <div>
+        <span>Vous n'avez pas de compte ?
+          <a href="/register" class="register-link">S'inscrire</a>
+        </span>
+      </div>
     </div>
   </div>
 </div>
