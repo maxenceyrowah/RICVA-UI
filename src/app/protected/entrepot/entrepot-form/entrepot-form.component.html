@@ -7,10 +7,10 @@
   <section class="form-section">
     <mat-card>
       <mat-card-content>
-        <h3>Créer un entrepôt</h3>
+        <h3>{{ title }}</h3>
 
         <div class="form-wrapper">
-          <form [formGroup]="EntrepotCreationForm" (ngSubmit)="submit()" novalidate>
+          <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
             <div class="form-wrapper-field">
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Libelle</mat-label>
@@ -44,9 +44,9 @@
 
             <div class="form-wrapper-button">
               <div>
-                <button mat-flat-button routerLink="['/dashboard/entrepot']">Annuler</button>
+                <button mat-flat-button [routerLink]="['/dashboard/entrepot']">Annuler</button>
               </div>
-              <div><button mat-flat-button type="submit">Enregistrer</button></div>
+              <div><button mat-flat-button type="submit">{{ button }}</button></div>
             </div>
           </form>
         </div>

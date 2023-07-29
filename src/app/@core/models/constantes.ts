@@ -2,6 +2,12 @@ import { Sidebar } from "./sidebar";
 
 export const SIDEBAR_MENU_CONFIG: Sidebar[] = [
   {
+    title: 'Tableau de bord',
+    numberOfItems: 12,
+    link: '/dashboard',
+    icon: 'campaign',
+  },
+  {
     title: 'Campagnes',
     numberOfItems: 12,
     icon: 'campaign',

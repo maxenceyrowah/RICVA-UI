@@ -22,6 +22,10 @@ const routes: Routes = [
         path: 'entrepot/creation',
         component: EntrepotFormComponent,
       },
+      {
+        path: 'entrepot/:entrepotId/edition',
+        component: EntrepotFormComponent,
+      },
     ],
   },
 ];

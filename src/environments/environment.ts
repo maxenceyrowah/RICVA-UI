@@ -1,10 +1,10 @@
 export const environment = {
   firebase: {
-    projectId: 'ricva-admin-managment',
-    appId: '1:808314028924:web:2de7c9905e8fb0d1875af9',
-    storageBucket: 'ricva-admin-managment.appspot.com',
-    apiKey: 'AIzaSyAdZZvp9lXgTFMhRY7qK2OSll-qc0ITKkc',
-    authDomain: 'ricva-admin-managment.firebaseapp.com',
-    messagingSenderId: '808314028924',
+    projectId: 'management-ricva-system',
+    appId: '1:386121908306:web:46f4c557306f6511dd1f8b',
+    storageBucket: 'management-ricva-system.appspot.com',
+    apiKey: 'AIzaSyDBbWEXWN9CU9bu8lVyKWiAtFZGJuep1nE',
+    authDomain: 'management-ricva-system.firebaseapp.com',
+    messagingSenderId: '386121908306',
   },
 };

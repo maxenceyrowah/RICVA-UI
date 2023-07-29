@@ -1,14 +1,14 @@
 {
   "targets": {
-    "ricva-admin-managment": {
+    "management-ricva-system": {
       "hosting": {
         "ricva-ui-app": [
-          "ricva-admin-managment"
+          "management-ricva-system"
         ]
       }
     }
   },
   "projects": {
-    "default": "ricva-admin-managment"
+    "default": "management-ricva-system"
   }
 }

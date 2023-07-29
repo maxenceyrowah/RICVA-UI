@@ -52,12 +52,14 @@ export class AuthService {
 
   register({ email, password }: Login) {
     return createUserWithEmailAndPassword(this.auth, email, password)
-      .then(() => {
-        this.router.navigate([this.registerLink]);
-      })
-      .catch((err) => {
-        console.log('[] err', err);
+      .then((res) => {
         this.router.navigate([this.loginLink]);
+      })
+      .catch((error) => {
+        const errorCode = error?.code;
+        const errorMessage = this.errorHandler.getErrorMessage(errorCode);
+        console.log('[] Error: ', errorMessage);
+        this.router.navigate([this.registerLink]);
       });
   }
 

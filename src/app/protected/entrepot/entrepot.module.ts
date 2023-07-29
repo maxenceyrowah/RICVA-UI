@@ -7,6 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { EntrepotComponent } from './entrepot.component';
 import { EntrepotRoutingModule } from './entrepot-routing.module';
@@ -22,7 +24,9 @@ import { EntrepotFormComponent } from './entrepot-form/entrepot-form.component';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatDialogModule
   ],
 })
 export class EntrepotModule {}
