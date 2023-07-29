@@ -1,17 +1,12 @@
 import { inject, Injectable } from '@angular/core';
 import {
   Firestore,
-  addDoc,
   collection,
   collectionData,
   deleteDoc,
   doc,
-  getDoc,
-  getDocs,
-  query,
   setDoc,
   updateDoc,
-  where,
 } from '@angular/fire/firestore';
 
 import { Entrepot } from '../../models/entrepots';
@@ -28,9 +23,8 @@ export class EntrrepotsService {
   }
 
   postEntrepot(data: Entrepot) {
-    data.id = Date.now().toString();
-    const newCollection = collection(this.firestore, 'entrepots');
-    return addDoc(newCollection, data)
+    const newCollection = doc(collection(this.firestore, 'entrepots'));
+    return setDoc(newCollection, { ...data, id: newCollection.id })
       .then(() => {
         this.router.navigate(['/dashboard/entrepot']);
       })
@@ -41,7 +35,7 @@ export class EntrrepotsService {
 
   getEntrepots() {
     const newCollection = collection(this.firestore, 'entrepots');
-    return collectionData(newCollection, { idField: newCollection.id });
+    return collectionData(newCollection);
   }
 
   deleteEntrepot(firebaseDocumentId: string) {
@@ -49,7 +43,13 @@ export class EntrrepotsService {
       this.firestore,
       `/entrepots/${firebaseDocumentId}`
     );
-    return deleteDoc(newCollection);
+    return deleteDoc(newCollection)
+      .then(() => {
+        this.getEntrepots();
+      })
+      .catch((error) => {
+        console.log('[] error:', error);
+      });
   }
 
   putEntrepot(firebaseDocumentId: string, data: any) {

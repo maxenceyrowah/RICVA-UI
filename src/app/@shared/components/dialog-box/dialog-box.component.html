@@ -1,0 +1,25 @@
+<div class="mat-dialog-wrapper">
+  <div class="mat-title-wrapper">
+    <button mat-icon-button (click)="cancel()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="mat-content-wrapper">
+    <h2 class="mat-title-color">{{ data?.title }}</h2>
+    <div class="mat-content-description">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam officiis quaerat hic repudiandae aut quae neque
+      culpa vitae iure ut cumque facere quas saepe reiciendis quos consequatur veniam, ullam sed!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </div>
+  </div>
+
+  <div class="mat-action-wrapper">
+    <div>
+      <button mat-flat-button (click)="cancel()">Non</button>
+    </div>
+    <div>
+      <button mat-flat-button (click)="submit()">Oui</button>
+    </div>
+  </div>
+</div>

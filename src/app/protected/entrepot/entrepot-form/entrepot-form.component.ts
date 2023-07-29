@@ -11,7 +11,6 @@ import { EntrrepotsService } from 'src/app/@core/services/entrepots/entrrepots.s
 })
 export class EntrepotFormComponent implements OnInit {
   entrepotId: null = null;
-  firebaseDocumentSelectedId: string = '';
   form: any = {};
   title: string = 'Créer un entrepôt';
   button: string = 'Enregistrer';
@@ -38,7 +37,6 @@ export class EntrepotFormComponent implements OnInit {
         const currentEntrepot: any = [...entrepot].find(
           (e) => e['id'] === this.entrepotId
         );
-        this.firebaseDocumentSelectedId = currentEntrepot?.entrepots;
         this.form.patchValue(currentEntrepot);
       });
     }
@@ -57,7 +55,7 @@ export class EntrepotFormComponent implements OnInit {
     };
 
     this.entrepotId
-      ? this.entrepotService.putEntrepot(this.firebaseDocumentSelectedId, dataForm)
+      ? this.entrepotService.putEntrepot(this.entrepotId, dataForm)
       : this.entrepotService.postEntrepot(dataForm);
   }
 

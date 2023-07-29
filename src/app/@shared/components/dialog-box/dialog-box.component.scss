@@ -1,0 +1,25 @@
+.mat-title-wrapper {
+  text-align: right;
+}
+
+.mat-dialog-wrapper {
+  text-align: center;
+  height: 100%;
+}
+.mat-content-wrapper {
+  text-align: center;
+}
+.mat-title-color {
+  color: #cb7b4b;
+  margin-top: 20px;
+}
+.mat-content-description {
+  width: 479px;
+  text-align: center;
+  margin: 25px auto;
+}
+.mat-action-wrapper {
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+}

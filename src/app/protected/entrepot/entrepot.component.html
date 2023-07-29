@@ -9,25 +9,21 @@
     <mat-card>
       <mat-card-content>
         <table mat-table [dataSource]="entrepots">
-          <!-- Position Column -->
           <ng-container matColumnDef="Libelle">
             <th mat-header-cell *matHeaderCellDef> Libelle </th>
             <td mat-cell *matCellDef="let row"> {{ row.libelle }} </td>
           </ng-container>
 
-          <!-- Name Column -->
           <ng-container matColumnDef="Superficie m2">
             <th mat-header-cell *matHeaderCellDef> Superficie (M°2) </th>
             <td mat-cell *matCellDef="let row"> {{ row.superficie }} </td>
           </ng-container>
 
-          <!-- Weight Column -->
           <ng-container matColumnDef="Placer">
             <th mat-header-cell *matHeaderCellDef> Placer </th>
             <td mat-cell *matCellDef="let row"> {{ row.placer }} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
           <ng-container matColumnDef="Actions">
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let row">
@@ -35,7 +31,7 @@
                 <button mat-icon-button [routerLink]="['/dashboard/entrepot', row.id, 'edition']">
                   <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button>
+                <button mat-icon-button (click)="deleteEntrepot(row.id)">
                   <mat-icon>delete</mat-icon>
                 </button>
               </div>

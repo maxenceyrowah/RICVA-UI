@@ -12,6 +12,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SharedModule } from './@shared/shared.module';
+import { CoreModule } from './@core/core.module';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -19,6 +21,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     BrowserModule,
     PublicModule,
     ProtectedModule,
+    SharedModule,
+    CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
