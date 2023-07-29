@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -12,13 +13,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { EntrepotComponent } from './entrepot.component';
 import { EntrepotRoutingModule } from './entrepot-routing.module';
-import { EntrepotFormComponent } from './entrepot-form/entrepot-form.component';
 
 @NgModule({
-  declarations: [EntrepotComponent, EntrepotFormComponent],
+  declarations: [EntrepotComponent],
   imports: [
     CommonModule,
-    EntrepotRoutingModule,
+    RouterModule,
     MatButtonModule,
     MatCardModule,
     MatTableModule,
@@ -26,7 +26,8 @@ import { EntrepotFormComponent } from './entrepot-form/entrepot-form.component';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    EntrepotRoutingModule,
   ],
 })
 export class EntrepotModule {}

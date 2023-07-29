@@ -2,10 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { EntrepotComponent } from './entrepot/entrepot.component';
-
 import { authGuard } from '../@core/guards/auth/auth.guard';
-import { EntrepotFormComponent } from './entrepot/entrepot-form/entrepot-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -16,15 +13,18 @@ const routes: Routes = [
     children: [
       {
         path: 'entrepot',
-        component: EntrepotComponent,
+        loadChildren: () =>
+        import('./entrepot/entrepot.module').then((m) => m.EntrepotModule),
       },
       {
         path: 'entrepot/creation',
-        component: EntrepotFormComponent,
+        loadChildren: () =>
+        import('./entrepot/entrepot-form/entrepot-form.module').then((m) => m.EntrepotFormModule),
       },
       {
         path: 'entrepot/:entrepotId/edition',
-        component: EntrepotFormComponent,
+        loadChildren: () =>
+        import('./entrepot/entrepot-form/entrepot-form.module').then((m) => m.EntrepotFormModule),
       },
     ],
   },

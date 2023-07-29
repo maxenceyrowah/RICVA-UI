@@ -26,7 +26,7 @@ export class EntrrepotsService {
     const newCollection = doc(collection(this.firestore, 'entrepots'));
     return setDoc(newCollection, { ...data, id: newCollection.id })
       .then(() => {
-        this.router.navigate(['/dashboard/entrepot']);
+        this.router.navigate(['/app/dashboard/entrepot']);
       })
       .catch((err) => {
         console.log('[] error:', err);
@@ -59,7 +59,7 @@ export class EntrrepotsService {
     );
     return updateDoc(newCollection, data)
       .then(() => {
-        this.router.navigate(['/dashboard/entrepot']);
+        this.router.navigate(['/app/dashboard/entrepot']);
       })
       .catch((error) => {
         console.log('[] error:', error);

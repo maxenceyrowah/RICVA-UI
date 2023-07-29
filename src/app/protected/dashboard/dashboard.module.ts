@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,14 +17,13 @@ import { MatCardModule } from '@angular/material/card';
 import { DashboardComponent } from './dashboard.component';
 import { DasboardRoutingModule } from './dashboard-routing.module';
 
-
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
-    DasboardRoutingModule,
+    RouterModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
@@ -33,6 +34,7 @@ import { DasboardRoutingModule } from './dashboard-routing.module';
     MatExpansionModule,
     MatCardModule,
     MatTableModule,
-  ]
+    DasboardRoutingModule,
+  ],
 })
 export class DashboardModule { }

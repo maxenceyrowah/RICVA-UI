@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { guestGuard } from '../@core/guards/guest/guest.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [guestGuard]},
-  { path: 'register', component: RegisterComponent, canActivate: [guestGuard]},
+  {
+    path: 'login',
+    canActivate: [guestGuard],
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'register',
+    canActivate: [guestGuard],
+    loadChildren: () =>
+      import('./register/register.module').then((m) => m.RegisterModule),
+  },
 ];
 
 @NgModule({

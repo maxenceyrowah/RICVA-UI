@@ -1,7 +1,7 @@
 <div class="container">
   <section class="actions">
     <span>{{ breadcrumbs }}</span>
-    <button mat-flat-button class="actions-button" [routerLink]="['/dashboard/entrepot/creation']">Créer un
+    <button mat-flat-button class="actions-button" [routerLink]="['/app/dashboard/entrepot/creation']">Créer un
       entrepot</button>
   </section>
 
@@ -28,7 +28,7 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let row">
               <div>
-                <button mat-icon-button [routerLink]="['/dashboard/entrepot', row.id, 'edition']">
+                <button mat-icon-button [routerLink]="['/app/dashboard/entrepot', row.id, 'edition']">
                   <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-icon-button (click)="deleteEntrepot(row.id)">

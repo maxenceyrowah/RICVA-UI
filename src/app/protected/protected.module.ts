@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ProtectedRoutingModule } from './protected-routing.module';
-import { EntrepotModule } from './entrepot/entrepot.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    RouterModule,
     DashboardModule,
-    EntrepotModule,
     ProtectedRoutingModule
   ]
 })

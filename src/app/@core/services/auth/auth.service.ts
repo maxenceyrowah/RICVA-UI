@@ -19,9 +19,9 @@ export class AuthService {
   private auth;
   private hasTokenExistMsg: string =
     'Impossible de se connecter. Veuillez vérifier les informations saisies.';
-  private dashboardLink: string = '/dashboard';
-  private loginLink: string = '/login';
-  private registerLink: string = '/register';
+  private dashboardLink: string = '/app/dashboard';
+  private loginLink: string = '/public/login';
+  private registerLink: string = '/public/register';
 
   constructor(private router: Router, private errorHandler: ErrorService) {
     this.auth = inject(Auth);
