@@ -1,0 +1,56 @@
+<div class="container">
+  <section class="actions">
+    <span>{{ breadcrumbs }}</span>
+    <button mat-flat-button class="actions-button" [routerLink]="['/dashboard/entrepot']">Précedent</button>
+  </section>
+
+  <section class="form-section">
+    <mat-card>
+      <mat-card-content>
+        <h3>Créer un entrepôt</h3>
+
+        <div class="form-wrapper">
+          <form [formGroup]="EntrepotCreationForm" (ngSubmit)="submit()" novalidate>
+            <div class="form-wrapper-field">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Libelle</mat-label>
+                <input matInput placeholder="Veuillez saisir votre libelle" formControlName='libelle'>
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Longitude</mat-label>
+                <input matInput formControlName='longitude' type="number">
+              </mat-form-field>
+            </div>
+
+            <div class="form-wrapper-field">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Superficie m2</mat-label>
+                <input matInput formControlName='superficie' type="number">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Lattitude</mat-label>
+                <input matInput formControlName='lattitude' type="number">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Placer</mat-label>
+                <input matInput placeholder="Veuillez saisir votre placer" formControlName='placer'>
+              </mat-form-field>
+            </div>
+
+            <div class="form-wrapper-button">
+              <div>
+                <button mat-flat-button routerLink="['/dashboard/entrepot']">Annuler</button>
+              </div>
+              <div><button mat-flat-button type="submit">Enregistrer</button></div>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

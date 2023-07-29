@@ -1,0 +1,29 @@
+.container {
+  padding: 8px 25px;
+}
+.actions {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-wrapper {
+  margin-top: 50px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-wrapper-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 40px;
+}
+.form-wrapper-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
