@@ -3,32 +3,19 @@
 }
 
 .app-container {
-  // height: 90%;
-  // margin: 0;
-
   position: absolute;
   top: 65px;
   bottom: 0;
   left: 0;
   right: 0;
-  // background-color: #eee;
 }
 .app-sidenav {
   width: 300px;
-  // background-color: red;
-  border: none
+  border: none;
 }
 .app-sidenav-content {
-  // display: flex;
-  // height: 100%;
-  // align-items: center;
-  // justify-content: center;
   padding: 3px;
-  // background-color: #eee;
   border-radius: 10px;
-  // background-color: rebeccapurple;
-  // position: relative;
-  // top: 49rem;
 }
 
 .sidebar-item {
@@ -38,4 +25,11 @@
 .wrapper-item {
   display: flex;
   justify-content: space-between;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fafafb;
 }

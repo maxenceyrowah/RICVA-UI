@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -34,6 +35,7 @@ import { DasboardRoutingModule } from './dashboard-routing.module';
     MatExpansionModule,
     MatCardModule,
     MatTableModule,
+    MatMenuModule,
     DasboardRoutingModule,
   ],
 })

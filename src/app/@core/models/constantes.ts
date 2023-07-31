@@ -32,7 +32,7 @@ export const SIDEBAR_MENU_CONFIG: Sidebar[] = [
     icon: 'dashboard',
   },
   {
-    title: 'Entrepots',
+    title: 'Entrepôts',
     link: '/app/dashboard/entrepot',
     numberOfItems: 12,
     icon: 'dashboard',
