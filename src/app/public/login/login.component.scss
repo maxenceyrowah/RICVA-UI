@@ -17,8 +17,12 @@
     margin-top: 3rem;
     margin-bottom: auto;
 
-    .wrapper-form-content {
+    .wrapper-form-logo {
+      display: flex;
+      flex-direction: column;
+    }
 
+    .wrapper-form-content {
       .form-title {
         color: #cb7b4b;
       }

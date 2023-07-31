@@ -17,6 +17,11 @@
     margin-top: 3rem;
     margin-bottom: auto;
 
+    .wrapper-form-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
     .wrapper-form-content {
 
       .form-title {
@@ -50,14 +55,14 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    flex-direction: column; /* Changer la direction en colonne pour les petits écrans */
+    flex-direction: column;
   }
 
   .wrapper-bg-image {
-    display: none; /* Masquer l'image de fond pour les petits écrans */
+    display: none;
   }
 
   .wrapper-content {
-    margin-top: 1rem; /* Réduire la marge supérieure pour les petits écrans */
+    margin-top: 1rem;
   }
 }
