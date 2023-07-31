@@ -47,3 +47,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column; /* Changer la direction en colonne pour les petits écrans */
+  }
+
+  .wrapper-bg-image {
+    display: none; /* Masquer l'image de fond pour les petits écrans */
+  }
+
+  .wrapper-content {
+    margin-top: 1rem; /* Réduire la marge supérieure pour les petits écrans */
+  }
+}

@@ -1,6 +1,6 @@
 <div class="mat-dialog-wrapper">
   <div class="mat-title-wrapper">
-    <button mat-icon-button (click)="cancel()">
+    <button mat-icon-button (click)="cancel()" class="mat-title-wrapper-button">
       <mat-icon>close</mat-icon>
     </button>
   </div>
@@ -16,10 +16,10 @@
 
   <div class="mat-action-wrapper">
     <div>
-      <button mat-flat-button (click)="cancel()">Non</button>
+      <button mat-flat-button (click)="cancel()" class="shared_btn shared_btn-secondary">Non</button>
     </div>
     <div>
-      <button mat-flat-button (click)="submit()">Oui</button>
+      <button mat-flat-button (click)="submit()" class="shared_btn shared_btn-primary">Oui</button>
     </div>
   </div>
 </div>

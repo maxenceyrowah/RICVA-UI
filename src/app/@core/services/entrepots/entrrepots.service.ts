@@ -8,6 +8,7 @@ import {
   setDoc,
   updateDoc,
 } from '@angular/fire/firestore';
+import { ToastrService } from 'ngx-toastr';
 
 import { Entrepot } from '../../models/entrepots';
 import { Router } from '@angular/router';
@@ -17,8 +18,12 @@ import { Router } from '@angular/router';
 })
 export class EntrrepotsService {
   private firestore;
+  private entrepotUpdateMsg: string = 'L\'entrepôt a été mis à jour avec succès.';
+  private entrepotCreateMsg: string = 'L\'entrepôt a été créé avec succès.';
+  private entrepotDeleteMsg: string = 'L\'entrepôt a été supprimé avec succès.';
+  private firebasCollectionPath: string = 'entrepots';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private toastr: ToastrService) {
     this.firestore = inject(Firestore);
   }
 
@@ -26,43 +31,46 @@ export class EntrrepotsService {
     const newCollection = doc(collection(this.firestore, 'entrepots'));
     return setDoc(newCollection, { ...data, id: newCollection.id })
       .then(() => {
+        this.toastr.success(this.entrepotCreateMsg);
         this.router.navigate(['/app/dashboard/entrepot']);
       })
       .catch((err) => {
-        console.log('[] error:', err);
+        this.toastr.warning(err?.message);
       });
   }
 
   getEntrepots() {
-    const newCollection = collection(this.firestore, 'entrepots');
+    const newCollection = collection(this.firestore, this.firebasCollectionPath);
     return collectionData(newCollection);
   }
 
   deleteEntrepot(firebaseDocumentId: string) {
     const newCollection = doc(
       this.firestore,
-      `/entrepots/${firebaseDocumentId}`
+      `/${this.firebasCollectionPath}/${firebaseDocumentId}`
     );
     return deleteDoc(newCollection)
       .then(() => {
+        this.toastr.success(this.entrepotDeleteMsg);
         this.getEntrepots();
       })
       .catch((error) => {
-        console.log('[] error:', error);
+        this.toastr.warning(error?.message);
       });
   }
 
   putEntrepot(firebaseDocumentId: string, data: any) {
     const newCollection = doc(
       this.firestore,
-      `/entrepots/${firebaseDocumentId}`
+      `/${this.firebasCollectionPath}/${firebaseDocumentId}`
     );
     return updateDoc(newCollection, data)
       .then(() => {
+        this.toastr.success(this.entrepotUpdateMsg);
         this.router.navigate(['/app/dashboard/entrepot']);
       })
       .catch((error) => {
-        console.log('[] error:', error);
+        this.toastr.warning(error?.message);
       });
   }
 }

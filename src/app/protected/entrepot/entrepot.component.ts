@@ -17,12 +17,14 @@ export class EntrepotComponent implements OnInit {
     'Placer',
     'Actions',
   ];
+  loading: boolean = true;
   entrepots: any[] = [];
   dialogBox: any = {};
+  title: string = 'Historiques des entrepôts'
 
   constructor(
     private entrepotService: EntrrepotsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {}
 
   getEntrepots() {
@@ -33,7 +35,7 @@ export class EntrepotComponent implements OnInit {
 
   deleteEntrepot(entrepotId: string) {
     this.dialogBox = {
-      title: 'Voulez-vous vraiment supprimer cette entrepôt',
+      title: 'Voulez-vous supprimer ? ',
       type: 'DELETE',
       description: '',
       confirm: true,
@@ -41,7 +43,7 @@ export class EntrepotComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DialogBoxComponent, {
       width: '645px',
-      height: '310px',
+      height: '330px',
       disableClose: true,
       data: this.dialogBox,
     });

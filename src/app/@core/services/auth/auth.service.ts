@@ -6,6 +6,7 @@ import {
   signOut,
 } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 import { Login } from '../../models/login';
 import { ErrorService } from '../error/error.service';
@@ -22,8 +23,13 @@ export class AuthService {
   private dashboardLink: string = '/app/dashboard';
   private loginLink: string = '/public/login';
   private registerLink: string = '/public/register';
+  private registersuccesMsg: string = 'Votre compte a bien été créé, veuillez vous connecter.'
 
-  constructor(private router: Router, private errorHandler: ErrorService) {
+  constructor(
+    private router: Router,
+    private errorHandler: ErrorService,
+    private toastr: ToastrService
+    ) {
     this.auth = inject(Auth);
   }
 
@@ -45,7 +51,7 @@ export class AuthService {
       .catch((error) => {
         const errorCode = error?.code;
         const errorMessage = this.errorHandler.getErrorMessage(errorCode);
-        console.log('[] Error: ', errorMessage);
+        this.toastr.warning(errorMessage);
         this.router.navigate([this.loginLink]);
       });
   }
@@ -53,12 +59,13 @@ export class AuthService {
   register({ email, password }: Login) {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then((res) => {
+        this.toastr.success(this.registersuccesMsg);
         this.router.navigate([this.loginLink]);
       })
       .catch((error) => {
         const errorCode = error?.code;
         const errorMessage = this.errorHandler.getErrorMessage(errorCode);
-        console.log('[] Error: ', errorMessage);
+        this.toastr.warning(errorMessage);
         this.router.navigate([this.registerLink]);
       });
   }
@@ -75,7 +82,7 @@ export class AuthService {
         this.router.navigate([this.loginLink]);
       })
       .catch((err) => {
-        console.log('[] err', err);
+        this.toastr.warning(err?.message);
       });
   }
 }

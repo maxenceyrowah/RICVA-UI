@@ -47,3 +47,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper-bg-image {
+    display: none;
+  }
+
+  .wrapper-content {
+    margin-top: 1rem;
+  }
+}

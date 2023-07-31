@@ -14,4 +14,54 @@
   border-top: 1px solid transparent;
   cursor: pointer;
 }
+.mat-mdc-header-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.form_title {
+  color: #cb7b4b;
+}
+.table_header {
+  background-color: #fff6f1;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent
+}
+.shared_btn {
+  padding: 20px 80px;
+  border-radius: 5px;
+}
+.shared_btn_Actions {
+  border-radius: 15px;
+  margin-right: 5px;
+}
+.shared_btn-primary {
+  color: #fff !important;
+  background-color: #cb7b4b !important;
+}
+.shared_btn-secondary {
+  color: #cb7b4b !important;
+  background-color: #fff6f1 !important;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
 

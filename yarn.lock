@@ -127,7 +127,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/cdk@^16.1.6", "@angular/cdk@16.1.6":
+"@angular/cdk@^16.1.1", "@angular/cdk@^16.1.6", "@angular/cdk@16.1.6":
   "integrity" "sha512-ICwX3OyxmVotlhzlkvilvfZz32y9RXvUAaVtPsU1i20orgQBOMp+JGdP/vahLjTQRioUus834Wh6bu0KdHjCEg=="
   "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-16.1.6.tgz"
   "version" "16.1.6"
@@ -160,7 +160,7 @@
     "symbol-observable" "4.0.0"
     "yargs" "17.7.2"
 
-"@angular/common@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/common@^16.0.0 || ^17.0.0", "@angular/common@^16.1.0", "@angular/common@16.1.7":
+"@angular/common@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/common@^16.0.0 || ^17.0.0", "@angular/common@^16.1.0", "@angular/common@^16.1.1", "@angular/common@>=16.0.0-0", "@angular/common@16.1.7":
   "integrity" "sha512-7WwYwtJjuJtUkutB+aMCvtV5zxa43T4x+kqT+kS4KnUmLv5KdrGPxcS+/7YUuKEELWp1SG032UTwGPX0DXxH4g=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-16.1.7.tgz"
   "version" "16.1.7"
@@ -188,7 +188,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/core@^16.0.0 || ^17.0.0", "@angular/core@^16.1.0", "@angular/core@16.1.7":
+"@angular/core@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/core@^16.0.0 || ^17.0.0", "@angular/core@^16.1.0", "@angular/core@^16.1.1", "@angular/core@>=16.0.0-0", "@angular/core@16.1.7":
   "integrity" "sha512-Wl5BR9X1xnV7Z9v/MNVANhymuTKAuRv4etr4rRgaC5NbbJSuFM4y+mg4yVI4wmrYJo0gKRcV9+2mHaePr41fTg=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-16.1.7.tgz"
   "version" "16.1.7"
@@ -285,7 +285,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/platform-browser@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/platform-browser@^16.0.0 || ^17.0.0", "@angular/platform-browser@^16.1.0", "@angular/platform-browser@16.1.7":
+"@angular/platform-browser@^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "@angular/platform-browser@^16.0.0 || ^17.0.0", "@angular/platform-browser@^16.1.0", "@angular/platform-browser@>=16.0.0-0", "@angular/platform-browser@16.1.7":
   "integrity" "sha512-AjdUUv5+v50cclHPsKVVdNRdCQZJMGNKmvxyLgeGj2hs61lGoJxBYcYqPre2PpM0SvezNJBreUvjwqM3ttOjng=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-16.1.7.tgz"
   "version" "16.1.7"
@@ -5692,6 +5692,20 @@
   "integrity" "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
+
+"ngx-loading-buttons@^16.0.0":
+  "integrity" "sha512-P1+bWY2St3l2U5WbZgXTLz1v3kYtd+4NEJ1oNj6sRe+u1ljhSLBg+LFdiyHhfGjIAR1Mnly0x/PbiSFadGoJUQ=="
+  "resolved" "https://registry.npmjs.org/ngx-loading-buttons/-/ngx-loading-buttons-16.0.0.tgz"
+  "version" "16.0.0"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"ngx-toastr@^17.0.2":
+  "integrity" "sha512-KehiPx6bkbiUyJbabf0ZA04+ASumS8r/y4wPsUOMI9OrBvBcfq27UQmWuQKoVR8E+9y4Pq7eZkSg2kvxNvpxTA=="
+  "resolved" "https://registry.npmjs.org/ngx-toastr/-/ngx-toastr-17.0.2.tgz"
+  "version" "17.0.2"
+  dependencies:
+    "tslib" "^2.3.0"
 
 "nice-napi@^1.0.2":
   "integrity" "sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA=="

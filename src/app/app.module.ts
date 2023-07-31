@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxLoadingButtonsModule } from 'ngx-loading-buttons';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +18,6 @@ import { SharedModule } from './@shared/shared.module';
 import { CoreModule } from './@core/core.module';
 
 @NgModule({
-  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -25,11 +26,14 @@ import { CoreModule } from './@core/core.module';
     CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxLoadingButtonsModule,
+    ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

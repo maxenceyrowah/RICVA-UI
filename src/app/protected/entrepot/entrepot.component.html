@@ -1,13 +1,16 @@
 <div class="container">
   <section class="actions">
     <span>{{ breadcrumbs }}</span>
-    <button mat-flat-button class="actions-button" [routerLink]="['/app/dashboard/entrepot/creation']">Créer un
+    <button mat-flat-button [routerLink]="['/app/dashboard/entrepot/creation']"
+      class="shared_btn shared_btn-primary">Créer un
       entrepot</button>
   </section>
 
   <section class="table-section">
     <mat-card>
       <mat-card-content>
+        <h3 class="form_title">{{ title }}</h3>
+
         <table mat-table [dataSource]="entrepots">
           <ng-container matColumnDef="Libelle">
             <th mat-header-cell *matHeaderCellDef> Libelle </th>
@@ -28,17 +31,19 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let row">
               <div>
-                <button mat-icon-button [routerLink]="['/app/dashboard/entrepot', row.id, 'edition']">
+                <button mat-icon-button [routerLink]="['/app/dashboard/entrepot', row.id, 'edition']"
+                  class="shared_btn-secondary shared_btn_Actions">
                   <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button (click)="deleteEntrepot(row.id)">
+                <button mat-icon-button (click)="deleteEntrepot(row.id)"
+                  class="shared_btn-secondary shared_btn_Actions">
                   <mat-icon>delete</mat-icon>
                 </button>
               </div>
             </td>
           </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedEntrepotsColumns"></tr>
+          <tr mat-header-row *matHeaderRowDef="displayedEntrepotsColumns" class="table_header"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedEntrepotsColumns;"></tr>
         </table>
       </mat-card-content>

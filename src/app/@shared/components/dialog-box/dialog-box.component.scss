@@ -11,7 +11,6 @@
 }
 .mat-title-color {
   color: #cb7b4b;
-  margin-top: 20px;
 }
 .mat-content-description {
   width: 479px;
@@ -22,4 +21,22 @@
   display: flex;
   gap: 5px;
   justify-content: space-evenly;
+}
+.mat-title-wrapper-button {
+  background-color: #fff5f0;
+  color: #cb7b4b;
+  margin: 25px 20px;
+}
+
+.shared_btn {
+  padding: 20px 80px;
+  border-radius: 5px;
+}
+.shared_btn-primary {
+  color: #fff !important;
+  background-color: #cb7b4b !important;
+}
+.shared_btn-secondary {
+  color: #cb7b4b !important;
+  background-color: #fff6f1 !important;
 }
