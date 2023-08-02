@@ -14,6 +14,8 @@ export class EntrepotComponent implements OnInit {
   displayedEntrepotsColumns: string[] = [
     'Libelle',
     'Superficie m2',
+    'Latitude',
+    'Longitude',
     'Placer',
     'Actions',
   ];

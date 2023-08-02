@@ -1,7 +1,8 @@
 <div class="container">
   <section class="actions">
     <span>{{ breadcrumbs }}</span>
-    <button mat-flat-button class="shared_btn shared_btn-secondary" [routerLink]="['/app/dashboard/entrepot']" >Précedent</button>
+    <button mat-flat-button class="shared_btn shared_btn-secondary"
+      [routerLink]="['/app/dashboard/entrepot']">Précedent</button>
   </section>
 
   <section class="form-section">
@@ -12,27 +13,53 @@
         <div class="form-wrapper">
           <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
             <div class="form-wrapper-field">
-              <mat-form-field class="form-field" appearance="outline">
-                <mat-label>Libelle</mat-label>
-                <input matInput placeholder="Veuillez saisir votre libelle" formControlName='libelle'>
-              </mat-form-field>
+              <div>
+                <mat-form-field class="form-field" appearance="outline">
+                  <mat-label>Libelle</mat-label>
+                  <input matInput placeholder="Veuillez saisir votre libelle" formControlName='libelle'>
+                </mat-form-field>
+                <div *ngIf="form.get('libelle').invalid && form.get('libelle').touched" class="form-field-error">
+                  <div *ngIf="form.get('libelle').errors.required">Le libelle est requis.</div>
+                </div>
+              </div>
 
-              <mat-form-field class="form-field" appearance="outline">
-                <mat-label>Longitude</mat-label>
-                <input matInput formControlName='longitude' type="number">
-              </mat-form-field>
+
+              <div>
+                <mat-form-field class="form-field" appearance="outline">
+                  <mat-label>Longitude</mat-label>
+                  <input matInput formControlName='longitude' type="number">
+                </mat-form-field>
+                <div *ngIf="form.get('longitude').invalid && form.get('longitude').touched" class="form-field-error">
+                  <div *ngIf="form.get('longitude').errors.required">La longitude n'est pas valide.</div>
+                  <div *ngIf="form.get('longitude').errors.pattern">La longitude doit être un nombre valide entre -180
+                    et 180.</div>
+                </div>
+              </div>
             </div>
 
             <div class="form-wrapper-field">
-              <mat-form-field class="form-field" appearance="outline">
-                <mat-label>Superficie m2</mat-label>
-                <input matInput formControlName='superficie' type="number">
-              </mat-form-field>
+              <div>
+                <mat-form-field class="form-field" appearance="outline">
+                  <mat-label>Superficie m2</mat-label>
+                  <input matInput formControlName='superficie' type="number">
+                </mat-form-field>
+                <div *ngIf="form.get('superficie').invalid && form.get('superficie').touched" class="form-field-error">
+                  <div *ngIf="form.get('superficie').errors.required">La superficie n'est pas valide.</div>
+                  <div *ngIf="form.get('superficie').errors.pattern">La superficie doit être un nombre valide.</div>
+                </div>
+              </div>
 
-              <mat-form-field class="form-field" appearance="outline">
-                <mat-label>Lattitude</mat-label>
-                <input matInput formControlName='lattitude' type="number">
-              </mat-form-field>
+              <div>
+                <mat-form-field class="form-field" appearance="outline">
+                  <mat-label>Lattitude</mat-label>
+                  <input matInput formControlName='lattitude' type="number">
+                </mat-form-field>
+                <div *ngIf="form.get('lattitude').invalid && form.get('lattitude').touched" class="form-field-error">
+                  <div *ngIf="form.get('lattitude').errors.required">La latitude n'est pas valide.</div>
+                  <div *ngIf="form.get('lattitude').errors.pattern">La latitude doit être un nombre valide entre -90 et
+                    90.</div>
+                </div>
+              </div>
             </div>
 
             <div>
@@ -44,9 +71,14 @@
 
             <div class="form-wrapper-button">
               <div>
-                <button mat-flat-button [routerLink]="['/app/dashboard/entrepot']" class="shared_btn shared_btn-secondary">Annuler</button>
+                <button mat-flat-button [routerLink]="['/app/dashboard/entrepot']"
+                  class="shared_btn shared_btn-secondary">Annuler</button>
               </div>
-              <div><button mat-flat-button type="submit" class="shared_btn shared_btn-primary">{{ button }}</button></div>
+              <div>
+                <button mat-flat-button type="submit"
+                  [ngClass]="{ 'shared_btn': form.valid, 'shared_btn-primary': form.valid }" [disabled]="!form.valid">{{
+                  button }}</button>
+              </div>
             </div>
           </form>
         </div>

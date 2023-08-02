@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { EntrrepotsService } from 'src/app/@core/services/entrepots/entrrepots.service';
@@ -15,7 +15,7 @@ export class EntrepotFormComponent implements OnInit {
   title: string = 'Créer un entrepôt';
   button: string = 'Enregistrer';
   breadcrumbs: string =
-  'Tableau de bord > Administatrion > Operation > créer un entrepôt';
+    'Tableau de bord > Administatrion > Operation > créer un entrepôt';
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +30,8 @@ export class EntrepotFormComponent implements OnInit {
     );
 
     if (this.entrepotId) {
-      this.breadcrumbs = 'Tableau de bord > Administatrion > Operation > Modification d\'un entrepot';
+      this.breadcrumbs =
+        "Tableau de bord > Administatrion > Operation > Modification d'un entrepot";
       this.title = `Modification d'un entrepot`;
       this.button = `Mettre a jour`;
       this.entrepotService.getEntrepots().subscribe((entrepot) => {
@@ -61,10 +62,22 @@ export class EntrepotFormComponent implements OnInit {
 
   private createForm() {
     this.form = this.formBuilder.group({
-      libelle: [null],
-      longitude: [0],
-      superficie: [0],
-      lattitude: [0],
+      libelle: [null, [Validators.required]],
+      longitude: [
+        0,
+        [
+          Validators.required,
+          Validators.pattern(/^[-]?((1[0-7]|[1-9])?\d(\.\d+)?|180(\.0+)?)$/),
+        ],
+      ],
+      superficie: [0, [Validators.required, Validators.required, Validators.pattern(/^\d+(\.\d+)?$/), Validators.min(0)]],
+      lattitude: [
+        0,
+        [
+          Validators.required,
+          Validators.pattern(/^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?)$/),
+        ],
+      ],
       placer: [null],
     });
   }
