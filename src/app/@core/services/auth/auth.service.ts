@@ -17,7 +17,7 @@ const AccesStorageKey = '__ricva__access__token';
   providedIn: 'root',
 })
 export class AuthService {
-  private auth;
+  // private auth = inject(Auth);
   private hasTokenExistMsg: string =
     'Impossible de se connecter. Veuillez vérifier les informations saisies.';
   private dashboardLink: string = '/app/dashboard';
@@ -28,10 +28,9 @@ export class AuthService {
   constructor(
     private router: Router,
     private errorHandler: ErrorService,
-    private toastr: ToastrService
-    ) {
-    this.auth = inject(Auth);
-  }
+    private toastr: ToastrService,
+    private auth: Auth
+    ) {}
 
   login({ email, password }: Login) {
     return signInWithEmailAndPassword(this.auth, email, password)

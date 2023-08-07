@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { EntrrepotsService } from 'src/app/@core/services/entrepots/entrrepots.service';
 import { DialogBoxComponent } from 'src/app/@shared/components';
@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatCardModule,
         MatTableModule,
         MatIconModule,
+        MatDialogModule
     ],
 })
 export class EntrepotComponent implements OnInit {
