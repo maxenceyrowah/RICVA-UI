@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxLoadingButtonsModule } from 'ngx-loading-buttons';
 import { ToastrModule } from 'ngx-toastr';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -17,6 +16,27 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { SharedModule } from './@shared/shared.module';
 import { CoreModule } from './@core/core.module';
 
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AppComponent,
+    children: [
+      { path: '', redirectTo: 'public', pathMatch: 'full' },
+      {
+        path: 'app',
+        loadChildren: () =>
+          import('./protected/protected.module').then((m) => m.ProtectedModule),
+      },
+      {
+        path: 'public',
+        loadChildren: () =>
+          import('./public/public.routes').then((m) => m.publicRoutes),
+      },
+    ],
+  },
+];
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,7 +44,7 @@ import { CoreModule } from './@core/core.module';
     RouterModule,
     SharedModule,
     CoreModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes, { useHash: true }),
     BrowserAnimationsModule,
     NgxLoadingButtonsModule,
     ToastrModule.forRoot(),
