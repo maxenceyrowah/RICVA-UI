@@ -1,29 +1,39 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { EntrrepotsService } from '../@core/services/entrepots/entrrepots.service';
 
-export const protectedRoutes: Routes = [
+export default [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    loadComponent: () =>
+      import('./dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
+      providers: [EntrrepotsService],
     children: [
       { path: '', redirectTo: 'entrepot', pathMatch: 'full' },
       {
         path: 'entrepot',
         loadComponent: () =>
-        import('./entrepot/entrepot.component').then((m) => m.EntrepotComponent),
+          import('./entrepot-list/entrepot.component').then(
+            (m) => m.EntrepotComponent
+          ),
       },
       {
         path: 'entrepot/creation',
         loadComponent: () =>
-        import('./entrepot/entrepot-form/entrepot-form.component').then((m) => m.EntrepotFormComponent),
+          import('./entrepot-form/entrepot-form.component').then(
+            (m) => m.EntrepotFormComponent
+          ),
       },
       {
         path: 'entrepot/:entrepotId/edition',
         loadComponent: () =>
-        import('./entrepot/entrepot-form/entrepot-form.component').then((m) => m.EntrepotFormComponent),
+          import('./entrepot-form/entrepot-form.component').then(
+            (m) => m.EntrepotFormComponent
+          ),
       },
     ],
   },
-];
+] as Routes;

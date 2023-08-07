@@ -13,9 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Entrepot } from '../../models/entrepots';
 import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EntrrepotsService {
   private firestore;
   private entrepotUpdateMsg: string = 'L\'entrepôt a été mis à jour avec succès.';

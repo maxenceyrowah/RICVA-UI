@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-export const publicRoutes: Routes = [
+export default [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
@@ -12,4 +12,4 @@ export const publicRoutes: Routes = [
     loadComponent: () =>
       import('./register/register.component').then((m) => m.RegisterComponent),
   },
-];
+] as Routes;
