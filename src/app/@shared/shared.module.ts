@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 
 @NgModule({
-  declarations: [DialogBoxComponent],
-  imports: [CommonModule, MatDialogModule, MatButtonModule, MatIconModule ],
+    imports: [CommonModule, MatDialogModule, MatButtonModule, MatIconModule, DialogBoxComponent],
 })
 export class SharedModule {}

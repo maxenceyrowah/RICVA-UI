@@ -19,24 +19,22 @@ import { DashboardComponent } from './dashboard.component';
 import { DasboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatCardModule,
-    MatTableModule,
-    MatMenuModule,
-    DasboardRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        MatCardModule,
+        MatTableModule,
+        MatMenuModule,
+        DasboardRoutingModule,
+        DashboardComponent,
+    ],
 })
 export class DashboardModule { }

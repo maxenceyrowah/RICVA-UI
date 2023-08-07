@@ -12,18 +12,18 @@ import { EntrepotFormRoutingModule } from './entrepot-form-routing.module';
 import { EntrepotFormComponent } from './entrepot-form.component';
 
 @NgModule({
-  declarations: [EntrepotFormComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    EntrepotFormRoutingModule,
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        EntrepotFormRoutingModule,
+        EntrepotFormComponent,
+    ]
 })
 export class EntrepotFormModule { }

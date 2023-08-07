@@ -1,11 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogBox } from 'src/app/@core/models/dialog-box';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-dialog-box',
-  templateUrl: './dialog-box.component.html',
-  styleUrls: ['./dialog-box.component.scss'],
+    selector: 'app-dialog-box',
+    templateUrl: './dialog-box.component.html',
+    styleUrls: ['./dialog-box.component.scss'],
+    standalone: true,
+    imports: [MatButtonModule, MatIconModule],
 })
 export class DialogBoxComponent {
   title: string = '';
