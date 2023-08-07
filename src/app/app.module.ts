@@ -26,7 +26,7 @@ const routes: Routes = [
       {
         path: 'app',
         loadChildren: () =>
-          import('./protected/protected.module').then((m) => m.ProtectedModule),
+          import('./protected/protected.routes').then((m) => m.protectedRoutes),
       },
       {
         path: 'public',
