@@ -23,7 +23,8 @@ import { CoreModule } from './app/@core/core.module';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    loadComponent: () =>
+      import('./app/app.component').then((m) => m.AppComponent),
     children: [
       { path: '', redirectTo: 'public', pathMatch: 'full' },
       {

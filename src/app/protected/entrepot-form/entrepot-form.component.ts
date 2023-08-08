@@ -1,29 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 import { EntrrepotsService } from 'src/app/@core/services/entrepots/entrrepots.service';
-import { NgIf, NgClass } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { ENTREPOT_FORM_MODULE } from 'src/app/@shared/import.module';
 
 @Component({
     selector: 'app-entrepot-form',
     templateUrl: './entrepot-form.component.html',
     styleUrls: ['./entrepot-form.component.scss'],
     standalone: true,
-    imports: [
-        MatButtonModule,
-        RouterLink,
-        MatCardModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        NgIf,
-        NgClass,
-    ],
+    imports: [...ENTREPOT_FORM_MODULE],
 })
 export class EntrepotFormComponent implements OnInit {
   entrepotId: null = null;

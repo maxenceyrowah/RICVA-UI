@@ -1,27 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 import { EntrrepotsService } from 'src/app/@core/services/entrepots/entrrepots.service';
 import { DialogBoxComponent } from 'src/app/@shared/components';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
-import { RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
+import { ENTREPOT_MODULE } from 'src/app/@shared/import.module';
 
 @Component({
     selector: 'app-entrepot',
     templateUrl: './entrepot.component.html',
     styleUrls: ['./entrepot.component.scss'],
     standalone: true,
-    imports: [
-        MatButtonModule,
-        RouterLink,
-        MatCardModule,
-        MatTableModule,
-        MatIconModule,
-        MatDialogModule
-    ],
+    imports: [...ENTREPOT_MODULE],
 })
 export class EntrepotComponent implements OnInit {
   breadcrumbs: string = 'Tableau de bord > Administrateur';
