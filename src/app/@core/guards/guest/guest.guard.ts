@@ -3,7 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 
 import { isUserLoggedIn } from '../auth/auth.guard';
 
-export const guestGuard: CanActivateFn = (route, state) => {
+export const guestGuard: CanActivateFn = () => {
   const router = inject(Router);
 
   if (isUserLoggedIn()) {

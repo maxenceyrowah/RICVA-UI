@@ -12,8 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
     imports: [MatButtonModule, MatIconModule],
 })
 export class DialogBoxComponent {
-  title: string = '';
-  description: string = '';
+  title = '';
+  description = '';
   data: any;
 
   constructor(

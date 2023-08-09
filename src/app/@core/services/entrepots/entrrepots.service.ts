@@ -16,10 +16,10 @@ import { Router } from '@angular/router';
 @Injectable()
 export class EntrrepotsService {
   private firestore;
-  private entrepotUpdateMsg: string = 'L\'entrepôt a été mis à jour avec succès.';
-  private entrepotCreateMsg: string = 'L\'entrepôt a été créé avec succès.';
-  private entrepotDeleteMsg: string = 'L\'entrepôt a été supprimé avec succès.';
-  private firebasCollectionPath: string = 'entrepots';
+  private entrepotUpdateMsg = 'L\'entrepôt a été mis à jour avec succès.';
+  private entrepotCreateMsg = 'L\'entrepôt a été créé avec succès.';
+  private entrepotDeleteMsg = 'L\'entrepôt a été supprimé avec succès.';
+  private firebasCollectionPath = 'entrepots';
 
   constructor(private router: Router, private toastr: ToastrService) {
     this.firestore = inject(Firestore);

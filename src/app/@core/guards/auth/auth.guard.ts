@@ -8,7 +8,7 @@ export function isUserLoggedIn(): boolean {
   return accessToken !== null;
 }
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = () => {
   const router = inject(Router);
 
   if (!isUserLoggedIn()) {

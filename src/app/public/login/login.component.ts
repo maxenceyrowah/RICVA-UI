@@ -12,9 +12,9 @@ import { LOGIN_MODULE } from 'src/app/@shared/import.module';
     imports: [...LOGIN_MODULE]
 })
 export class LoginComponent {
-  hidePassword: boolean = true;
-  formTitle: string = 'Se connecter';
-  loginFormLogo: string = '../../../assets/img/logo.png';
+  hidePassword = true;
+  formTitle = 'Se connecter';
+  loginFormLogo = '../../../assets/img/logo.png';
 
   LoginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],

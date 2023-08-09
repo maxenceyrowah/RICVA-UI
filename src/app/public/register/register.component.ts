@@ -12,9 +12,9 @@ import { REGISTER_MODULE } from 'src/app/@shared/import.module';
     imports: [...REGISTER_MODULE]
 })
 export class RegisterComponent {
-  hidePassword: boolean = true;
-  formTitle: string = 'Créer un compte';
-  registerFormLogo: string = '../../../assets/img/logo.png';
+  hidePassword = true;
+  formTitle = 'Créer un compte';
+  registerFormLogo = '../../../assets/img/logo.png';
 
   RegisterForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],

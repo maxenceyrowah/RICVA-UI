@@ -13,11 +13,11 @@ import { ENTREPOT_FORM_MODULE } from 'src/app/@shared/import.module';
     imports: [...ENTREPOT_FORM_MODULE],
 })
 export class EntrepotFormComponent implements OnInit {
-  entrepotId: null = null;
+  entrepotId = null;
   form: any = {};
-  title: string = 'Créer un entrepôt';
-  button: string = 'Enregistrer';
-  breadcrumbs: string =
+  title = 'Créer un entrepôt';
+  button = 'Enregistrer';
+  breadcrumbs =
     'Tableau de bord > Administatrion > Operation > créer un entrepôt';
 
   constructor(

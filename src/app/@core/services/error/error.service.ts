@@ -11,7 +11,7 @@ export class ErrorService {
     'auth/email-already-in-use': 'Adresse e-mail déjà utilisé.',
     'auth/email-already-exists': 'L\'adresse e-mail fournie est déjà utilisée par un utilisateur existant.',
   };
-  private defaultMsg: string = "Une erreur s'est produite. Veuillez réessayer plus tard.";
+  private defaultMsg = "Une erreur s'est produite. Veuillez réessayer plus tard.";
 
   getErrorMessage(errorCode: string): string {
     if (this.errorMessages[errorCode]) {

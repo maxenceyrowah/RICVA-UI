@@ -13,7 +13,7 @@ import { ENTREPOT_MODULE } from 'src/app/@shared/import.module';
     imports: [...ENTREPOT_MODULE],
 })
 export class EntrepotComponent implements OnInit {
-  breadcrumbs: string = 'Tableau de bord > Administrateur';
+  breadcrumbs = 'Tableau de bord > Administrateur';
   displayedEntrepotsColumns: string[] = [
     'Libelle',
     'Superficie m2',
@@ -22,10 +22,10 @@ export class EntrepotComponent implements OnInit {
     'Placer',
     'Actions',
   ];
-  loading: boolean = true;
+  loading = true;
   entrepots: any[] = [];
   dialogBox: any = {};
-  title: string = 'Historiques des entrepôts'
+  title = 'Historiques des entrepôts'
 
   constructor(
     private entrepotService: EntrrepotsService,

@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
@@ -17,12 +17,12 @@ const AccesStorageKey = '__ricva__access__token';
   providedIn: 'root',
 })
 export class AuthService {
-  private hasTokenExistMsg: string =
+  private hasTokenExistMsg =
     'Impossible de se connecter. Veuillez vérifier les informations saisies.';
-  private dashboardLink: string = '/app/dashboard';
-  private loginLink: string = '/public/login';
-  private registerLink: string = '/public/register';
-  private registersuccesMsg: string = 'Votre compte a bien été créé, veuillez vous connecter.'
+  private dashboardLink = '/app/dashboard';
+  private loginLink = '/public/login';
+  private registerLink = '/public/register';
+  private registersuccesMsg = 'Votre compte a bien été créé, veuillez vous connecter.'
 
   constructor(
     private router: Router,
@@ -56,7 +56,7 @@ export class AuthService {
 
   register({ email, password }: Login) {
     return createUserWithEmailAndPassword(this.auth, email, password)
-      .then((res) => {
+      .then(() => {
         this.toastr.success(this.registersuccesMsg);
         this.router.navigate([this.loginLink]);
       })
@@ -69,7 +69,8 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const accesToken = JSON.parse(localStorage.getItem(AccesStorageKey)!);
+    const value = localStorage.getItem(AccesStorageKey) as string;
+    const accesToken = JSON.parse(value);
     return accesToken !== null;
   }
 
